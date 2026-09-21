@@ -1,0 +1,130 @@
+.story {
+  padding-block: clamp(70px, 10vw, 150px);
+  background: var(--paper-deep);
+  border-top: 1px solid var(--ink-14);
+}
+
+.story__shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 110px);
+  /* No `align-items: start` — the column must stretch for sticky to travel. */
+}
+
+/* --- sticky image --- */
+.story__visual {
+  height: 100%;
+}
+
+.story__pin {
+  position: sticky;
+  top: calc(var(--nav-h) + clamp(24px, 6vh, 70px));
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.story__frame {
+  overflow: hidden;
+  border-radius: var(--radius);
+  aspect-ratio: 4 / 5;
+  background: var(--paper-warm);
+}
+
+.story__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story__caption {
+  color: var(--ink-45);
+}
+
+/* --- text column --- */
+.story__text {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 4vw, 46px);
+  padding-top: clamp(0px, 2vw, 18px);
+}
+
+.story__title {
+  font-size: var(--t-xl);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  max-width: 14ch;
+}
+
+.story__note {
+  border-top: 1px solid var(--ink-14);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.story__note-title {
+  font-family: var(--font-display);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  max-width: 22ch;
+}
+
+.story__note-body {
+  font-size: 1rem;
+  line-height: 1.62;
+  color: var(--ink-60);
+  max-width: 62ch;
+}
+
+.story__link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  padding-inline: 28px;
+  border-radius: 100px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.94rem;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.story__link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--enamel);
+  transform: translateY(101%);
+  transition: transform 0.55s var(--ease);
+  z-index: -1;
+}
+
+.story__link:hover::before {
+  transform: translateY(0);
+}
+
+@media (max-width: 1080px) {
+  .story__shell {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story__pin {
+    position: static;
+  }
+
+  .story__frame {
+    aspect-ratio: 16 / 10;
+  }
+
+  .story__title {
+    max-width: 20ch;
+  }
+}
