@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-const logo = ""
 import './Navbar.css'
 
 const LINKS = [
@@ -46,7 +45,7 @@ export default function Navbar({ lenisRef }) {
       <header className={`nav ${lifted ? 'nav--lifted' : ''}`}>
         <div className="nav__inner">
           <a className="nav__brand" href="#top" aria-label="Tazerzitt Store, back to top">
-            <img className="nav__logo" src={logo} alt="" width="40" height="40" />
+            <img className="nav__logo" src="../public/logo.jpg" alt="" width="40" height="40" />
             <span className="nav__wordmark">
               Tazerzitt
               <span className="nav__sub tifinagh">ⵜⴰⵣⵔⵣⵉⵜ</span>

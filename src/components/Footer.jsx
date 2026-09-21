@@ -1,5 +1,4 @@
 import { useState } from 'react'
-const logo = ""
 import './Footer.css'
 
 const COLUMNS = [
@@ -109,7 +108,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__wordmark" aria-hidden="true">
-          <img className="footer__logo" src={logo} alt="" width="72" height="72" />
+          <img className="footer__logo" src="../public/logo.jpg" alt="logo" width="72" height="72" />
           <span>Tazerzitt</span>
         </div>
 
